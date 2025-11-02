@@ -1,0 +1,48 @@
+componentes:
+- listado de productos obtenidos desde la api
+(hacer una cart generica y reutilizable)
+--mostrar por cada producto nombre iamgen precio categoria stock
+(agregarle esos props al componente)
+(hacer responsive las carts)
+--mobile fisrt
+--indicador visual cuando el procuto esta sin stock
+(darle propiedades si stock esta esta en 0, que se pinte de otro color)
+
+carrito de compras
+--agregar productos al carrito
+(contexto de carrito para guardar los productos)
+--ver productos en el carrito con minimagen, nombre, precio unitario, cantidad, subtotal
+(hacer cart para carrito de compra pequeño)
+--modificar cantidad(incrementar/decremendar)
+(hacer contador) 
+--remover productos del carrito
+(con icono para eliminar del stock)
+--el carrito debe mantener los productos al recargar la pagina
+(localStorage)
+--hacer badge con cantidad de productos en un icono 
+()
+
+calculos de carrito de compras
+-subtotal, precio x cantidad
+-total general del carrito
+-calcular cantidad total de items en el carrito
+-mostrar valores actualizados en tiempo real
+
+validaciones 
+-no permitir agregar mas unidades en el stock
+-mostrar mensaje de error si se intenta superar el stock
+-deshabilidar boton de comprar si no esta en stock
+-validar que la cantidad sea positiva
+
+filtros
+-filtrar productos por categoria
+-buscador para filtrar por nombre de productos
+-mostrar contador de productos filtrados
+-filtros deben poder cambiarse
+
+interfaz
+-vista principal con listado de productos
+-panel lateral o modal para ver el carrito
+-responsibe
+-estados de carga mientras ed obtienen los productos
+-manejo de errores si la api falla
