@@ -30,9 +30,6 @@ const Products: React.FC = () => {
   if (loading) return <p>Cargando productos...</p>;
   if (error) return <p>Error: {error}</p>;
 
-    console.log("entro a products de pages")
-
-
     return(
         <div className={styles["products-container"]} >
             <h1>E-Commerce</h1>

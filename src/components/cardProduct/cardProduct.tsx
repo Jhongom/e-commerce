@@ -16,8 +16,6 @@ const CardProduct: React.FC<CardProps> = ({card}) => {
 
     const outOfStock = stock === 0
 
-    console.log("esta en cardproduct")
-
     return(
         <div className={styles["card-container"]}>
             <p> {title}</p>

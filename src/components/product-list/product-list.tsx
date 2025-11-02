@@ -6,7 +6,6 @@ type CardProductProps = {
     productProps: ProductTypes[];
 }
 const CardProductList =({productProps}: CardProductProps) =>{
-  console.log("esta en list",  productProps)
   return(
         <div className={styles["product-list-container"]}>
           {productProps.map((ProductTypes) =>{

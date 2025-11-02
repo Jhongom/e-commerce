@@ -5,10 +5,8 @@ const API_NAME = "https://dummyjson.com/products";
 export const fetchProductsApi = async () => {
 
   try {
-    console.log("esta en la api")
     const productsData = await axios.get(API_NAME);
     const products = productsData.data.products
-    console.log("esta la dataaaaa, " , products)
     return products
   } catch (error) {
     if (axios.isAxiosError(error)){
