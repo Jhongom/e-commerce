@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./cardProduct.module.scss"
-import type { CardProps, ProductTypes } from "../../constants/productsTypes";
+import type { CardProps } from "../../constants/productsTypes";
 
 
 
@@ -25,10 +25,10 @@ const CardProduct: React.FC<CardProps> = ({card}) => {
             <p>price {price}</p>
             <p>category {category}</p>
             <p >Stock {stock}</p>
+            <button>Buy</button>
         </div>
+
     );
-
-
 }
 
 export default CardProduct;
