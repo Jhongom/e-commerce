@@ -4,7 +4,7 @@ import type { CardProps } from "../../constants/productsTypes";
 
 
 
-const CardProduct: React.FC<CardProps> = ({card}) => {
+const CardProduct: React.FC<CardProps> = ({card, addToCar}) => {
     const {id, images, title, price, category, stock } = card
     /**
      * (hacer una cart generica y reutilizable)
@@ -23,7 +23,7 @@ const CardProduct: React.FC<CardProps> = ({card}) => {
             <p>price {price}</p>
             <p>category {category}</p>
             <p >Stock {stock}</p>
-            <button>Buy</button>
+            <button onClick={() => addToCar(card)}>Buy</button>
         </div>
 
     );

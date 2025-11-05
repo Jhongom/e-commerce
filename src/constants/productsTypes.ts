@@ -9,4 +9,9 @@ export interface ProductTypes {
 
 export interface CardProps{
     card: ProductTypes;
+    addToCar: (card: ProductTypes) => void
+}
+
+export type CarItem = ProductTypes & {
+    quantity? : number
 }
