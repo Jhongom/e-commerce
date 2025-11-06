@@ -1,6 +1,6 @@
 export interface ProductTypes {
     id: number;
-    images: string;
+    images: string[];
     title: string;
     price: number;
     category: string;
@@ -13,5 +13,5 @@ export interface CardProps{
 }
 
 export type CarItem = ProductTypes & {
-    quantity? : number
+    quantity : number
 }

@@ -1,5 +1,5 @@
-import { useState } from "react";
-import type { CardProps, CarItem, ProductTypes } from "../../constants/productsTypes"
+import { useEffect, useState } from "react";
+import type { CarItem, ProductTypes } from "../../constants/productsTypes"
 import CardProduct from "../cardProduct/cardProduct";
 import styles from "./product-list.module.scss";
 
@@ -9,12 +9,30 @@ type CardProductProps = {
 
 const CardProductList =({productProps}: CardProductProps) =>{
 
-  const [cart, setCart] = useState<CarItem[]>([]);
+  const initialStorageCar = (): CarItem[] => {
+    const startedStorage = localStorage.getItem("cart");
+    return startedStorage ? JSON.parse(startedStorage): []
+  }
+  
+  const [cart, setCart] = useState<CarItem[]>(initialStorageCar());
 
-   const addToCar = (card: ProductTypes) =>{
-        setCart((prevCart) =>[...prevCart, {...card, quantity: 1} ])
-        console.log(setCart)
-      }
+  useEffect(() =>{
+    localStorage.setItem('cart', JSON.stringify(cart))
+  },[cart])
+
+  const addToCar = (card: ProductTypes) => {
+    setCart((prevCart) => {
+      const itemExist = prevCart.find(cartItem => cartItem.id === card.id);
+      if (itemExist){
+        return prevCart.map(cartItem => 
+        cartItem.id === card.id 
+        ? { ...cartItem, quantity: (cartItem.quantity ?? 0) + 1 }: cartItem)
+      } 
+      const updatedCart = [...prevCart, { ...card, quantity: 1 }];
+      console.log("Nuevo carrito:", updatedCart);
+      return updatedCart;
+    });
+  };
       
   return(
         <div className={styles["product-list-container"]}>

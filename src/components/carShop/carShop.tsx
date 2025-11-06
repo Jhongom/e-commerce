@@ -16,7 +16,7 @@ const TemporaryDrawer: React.FC<TemporaryDrawerProps> = ({ open, onClose }) => {
   const DrawerList = (
     <Box sx={{ width: 250 }} role="presentation" onClick={onClose}>
       <List>
-        {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
+        {['Inbox', 'Clean', ].map((text, index) => (
           <ListItem key={text} disablePadding>
             <ListItemButton>
               <ListItemText primary={text} />

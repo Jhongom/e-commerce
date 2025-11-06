@@ -2,8 +2,6 @@ import React from "react";
 import styles from "./cardProduct.module.scss"
 import type { CardProps } from "../../constants/productsTypes";
 
-
-
 const CardProduct: React.FC<CardProps> = ({card, addToCar}) => {
     const {id, images, title, price, category, stock } = card
     /**
@@ -19,7 +17,7 @@ const CardProduct: React.FC<CardProps> = ({card, addToCar}) => {
     return(
         <div className={styles["card-container"]}>
             <p> {title}</p>
-            <img src={images}></img>
+            <img src={images[0]} alt={title} />
             <p>price {price}</p>
             <p>category {category}</p>
             <p >Stock {stock}</p>

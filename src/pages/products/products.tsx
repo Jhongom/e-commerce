@@ -5,6 +5,8 @@ import CardProductList from "../../components/product-list/product-list";
 import styles from "./products.module.scss"
 
 const Products: React.FC = () => {
+
+  //api handle
     const [items, setItems] = useState<ProductTypes[]>([])
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
@@ -13,7 +15,7 @@ const Products: React.FC = () => {
     useEffect(() => {
     const getProducts = async () => {
       try {
-        const data = await fetchProductsApi();  
+        const data: ProductTypes[] = await fetchProductsApi();  
         setItems(data);
       } catch (err) {
       if (err instanceof Error) {
